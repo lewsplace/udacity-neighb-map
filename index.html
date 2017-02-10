@@ -1,0 +1,30 @@
+<html>
+    <head>
+        <title>My Favorite Ballparks</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+
+    <body class="container">
+        <header class="row">
+            <h1 class="col-7">My favorite baseball parks</h1>
+        </header>
+        <main class="row">
+            <div id="parkmenu" class="col-3">
+                <input class="search-text" data-bind="textInput: filterText" type="text" placeholder="Search">
+                <ul class="park-list" data-bind="foreach: filteredPark">
+                  <li><a class="park" data-bind="text: name, click: selectedPark"></a></li>
+                </ul>
+            </div>
+            <div id="map" class="col-7">
+              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3048.8548622077906!2d-95.80662104940812!3d40.16778507856561!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDDCsDEwJzA0LjAiTiA5NcKwNDgnMTUuOSJX!5e0!3m2!1sen!2sus!4v1485484313006" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+            </div>
+        </main>
+        <script src="application.js"></script>
+        <script src="js/knockout-3.4.1.js"></script>       
+        <script src="js/jquery.min.js"></script>
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDBYFGDdKtPBqSMdR5Qva9vT0fOceSlD-M&callback=initMap" async defer onerror="googleErrorMsg()">
+        </script>
+    </body>
+</html>
